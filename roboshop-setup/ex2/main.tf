@@ -9,6 +9,9 @@ resource "aws_instance" "frontend" {
   ami           = "ami-0a017d8ceb274537d"
   instance_type = "t3.micro"
   vpc_security_group_ids = ["sg-07b32ef1433b68d03"]
+  tags = {
+    Name = var.instances[count.index]
+  }
 }
 
 variable "instances" {
@@ -18,5 +21,6 @@ variable "instances" {
 output "public_ip" {
   value = aws_instance.frontend.*.public_ip
 }
+
 
 
