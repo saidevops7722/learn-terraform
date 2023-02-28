@@ -4,7 +4,7 @@ data "aws_ami" "ami" {
   owners           = ["973714476881"]
 }
 
-resource "aws_instance" "ec2" {
+resource "aws_instance" "frontend" {
   count = length(var.instances)
   ami = "ami-0a017d8ceb274537d"
   instance_type = "t3.micro"
