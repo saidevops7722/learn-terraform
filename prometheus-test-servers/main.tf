@@ -8,11 +8,7 @@ resource "aws_spot_instance_request" "node1" {
     Name = "prom-test-server"
   }
 }
-resource "aws_ec2_tag" "node1" {
-  resource_id = aws_spot_instance_request.node1.spot_instance_id
-  key         = "Name"
-  value       = "prom-test-server"
-}
+
 
 resource "aws_spot_instance_request" "node2" {
   ami           = "ami-0f5628e5fe90f4a45"
@@ -22,9 +18,4 @@ resource "aws_spot_instance_request" "node2" {
   tags = {
     Name = "prom-test-node"
   }
-}
-resource "aws_ec2_tag" "node2" {
-  resource_id = aws_spot_instance_request.node2.spot_instance_id
-  key         = "Name"
-  value       = "prom-test-node"
 }
