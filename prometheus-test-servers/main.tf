@@ -19,3 +19,4 @@ resource "aws_spot_instance_request" "node2" {
     Name = "prom-test-node"
   }
 }
+
