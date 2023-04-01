@@ -20,3 +20,5 @@ resource "aws_spot_instance_request" "node2" {
   }
 }
 
+
+
