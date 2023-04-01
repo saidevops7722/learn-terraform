@@ -10,7 +10,7 @@ resource "aws_spot_instance_request" "node1" {
 }
 
 resource "aws_ec2_tag" "node1" {
-  resource_id = "aws_spot_instance_request.node1.spot_instance_id"
+  resource_id = aws_spot_instance_request.node1.spot_instance_id
   key         = "Name"
   value = "prom-test-server"
 }
@@ -27,7 +27,7 @@ resource "aws_spot_instance_request" "node2" {
 }
 
 resource "aws_ec2_tag" "node2" {
-  resource_id = "aws_spot_instance_request.node2.spot_instance_id"
+  resource_id = aws_spot_instance_request.node2.spot_instance_id
   key         = "Name"
   value = "prom-test-node"
 }
