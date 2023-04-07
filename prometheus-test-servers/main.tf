@@ -3,6 +3,7 @@ resource "aws_spot_instance_request" "node1" {
   instance_type = "t3.small"
   vpc_security_group_ids = ["sg-07b32ef1433b68d03"]
   wait_for_fulfillment = true
+  availability_zone = "us-east-1a"
 
   tags = {
     Name = "prom-test-server"
