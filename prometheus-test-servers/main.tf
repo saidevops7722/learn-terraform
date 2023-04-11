@@ -22,7 +22,7 @@ resource "aws_spot_instance_request" "node2" {
   ami           = "ami-0089b8e98cd95257d"
 instance_type = "t3.micro"
   vpc_security_group_ids = ["sg-07b32ef1433b68d03"]
-  availability_zone = "us-east-1a"
+
    tags = {
    Name = "prom-test-node"
    }
